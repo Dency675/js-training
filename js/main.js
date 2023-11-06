@@ -7,10 +7,12 @@ request
   .then((data) => {
     console.log(data);
 
-    const colorList = ["red", "green", "blue", "orange", "violet", "rose"];
-
     for (let i = 0; i < 10; i++) {
-      let colors = colorList[Math.floor(Math.random() * colorList.length)];
+      const r = Math.floor(Math.random() * 256);
+      const g = Math.floor(Math.random() * 256);
+      const b = Math.floor(Math.random() * 256);
+
+      const colors = `rgb(${r},${g},${b})`;
 
       const div1 = document.createElement("div");
       div1.classList.add("div-class1");
@@ -18,9 +20,13 @@ request
       h41.style.color = colors;
       const p1 = document.createElement("p");
       p1.classList.add("p1-class");
+
       const applybutton1 = document.createElement("button");
       applybutton1.classList.add("button-class");
       applybutton1.style.color = colors;
+      applybutton1.style.backgroundColor = `rgba(${r},${g},${b},0.05)`;
+      applybutton1.style.borderBlockColor = colors;
+
       const p12 = document.createElement("p");
       p12.classList.add("p-class");
 
